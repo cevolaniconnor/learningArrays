@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <utility> 
 using namespace std;
 
 //goal create a box and see if the coordinate input will fit in the box
@@ -21,7 +23,7 @@ public:
 
 //function to see if given point is in the box
 bool box::findPoint(int x, int y){
-	if (x > x1 and x < x2 and y > y1 and y < y2){
+	if (x >= x1 and x <= x2 and y >= y1 and y <= y2){
 		return true;
 	}else{
 		return false;
@@ -30,9 +32,21 @@ bool box::findPoint(int x, int y){
 
 int main(){
 
-	class box box(1,1,5,5);
+	class box b(1,1,5,5);
 
-	cout << box.findPoint(2,4) << endl;
+	std::vector<std::pair<int, int> > points;
+
+    points.push_back(std::make_pair(2, 4));
+    points.push_back(std::make_pair(5, 6));
+    points.push_back(std::make_pair(6, 6));
+    points.push_back(std::make_pair(4, 5));
+    points.push_back(std::make_pair(7, 1));
+    points.push_back(std::make_pair(2, 2));
+
+    for(pair<int, int> pair : points){
+    	cout << b.findPoint(pair.first, pair.second) <<endl;
+    }
+
 
 	return 0;
 }
