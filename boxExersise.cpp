@@ -44,7 +44,15 @@ int main(){
     points.push_back(std::make_pair(2, 2));
 
     for(pair<int, int> pair : points){
-    	cout << b.findPoint(pair.first, pair.second) <<endl;
+    	if(b.findPoint(pair.first, pair.second) == 1){
+
+    		int x = pair.first;
+    		int y = pair.second;
+
+    		cout << x << "," << y << " is in the box!" << endl;
+    	}else{
+    		cout << "The plot is not in the box" << endl;
+    	}
     }
 
 
