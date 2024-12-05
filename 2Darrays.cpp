@@ -35,20 +35,30 @@ void transpose(int array[][3], int size){
 	}
 }
 
+void sumOfRows(int array[][3], int size){
+	for(int r; r < SIZE; r++){
+		rowTotal = 0;
+		for(int c = 0; c < SIZE; c++){
+			rowTotal += numbers[r][c];
+		}
+		cout << rowTotal << endl;
+	}
+}
+
 int main(){
 
-	int copy[SIZE][SIZE];
 	int numbers [SIZE][SIZE] = {
 		{1,2,3},
 		{4,5,6},
 		{7,8,9}
 	};
+	int rowTotal = 0;
 
 	printArray(numbers, SIZE);
 
-	int rows = 
+/*
 	cout << "\n" ;
 	transpose(numbers, SIZE);
-
+*/
 	return 0;
 }
